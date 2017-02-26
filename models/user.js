@@ -37,11 +37,11 @@ const userSchema = new mongoose.Schema({
   events: [
     {type: mongoose.Schema.Types.ObjectId, ref: 'Event'}
     // eventSchema
+  ],
+  locations: [
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    // locationSchema
   ]
-  // locations: [
-  //   {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
-  //   // locationSchema
-  // ]
 }, { timestamps: { createdAt: 'created_at' }});
 
 function setPassword(value){
