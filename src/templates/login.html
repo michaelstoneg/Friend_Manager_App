@@ -1,0 +1,39 @@
+<!-- <h1>LOG IN </h1> -->
+<section id="logInForm" class="logInStyle">
+  <form novalidate ng-submit="login.submit()">
+    <div class="row">
+      <label></label><br>
+      <input class="u-full-width" type="email" placeholder="Email" ng-model="login.credentials.email">
+    </div>
+    <div class="row">
+      <label></label><br>
+      <input class="u-full-width" type="password" placeholder="Password" ng-model="login.credentials.password">
+    </div><br>
+    <button class="buttonLog">Login</button>
+  </form>
+  <!-- <button ng-click="login.authenticate('facebook')">Login with Facebook</button> -->
+</section>
+
+
+<section id="registerForm" class="logInStyle" >
+<form novalidate ng-controller="RegisterController as register"  ng-submit="register.submit()">
+
+  <div class="row">
+    <label></label>
+    <input class="u-full-width" type="text" name="username" placeholder="Username" ng-model="register.user.username">
+  </div>
+  <div class="row">
+    <label></label>
+    <input class="u-full-width" type="email" name="email" placeholder="Email" ng-model="register.user.email">
+  </div>
+  <div class="row">
+    <label></label>
+    <input class="u-full-width" type="password" name="password" placeholder="Password" ng-model="register.user.password">
+  </div>
+  <div class="row">
+    <label></label>
+    <input class="u-full-width" type="password" name="passwordConfirmation" placeholder="Password Confirmation" ng-model="register.user.passwordConfirmation">
+  </div>
+  <button class="buttonLog" id="regButton">Register</button>
+</form>
+</section>

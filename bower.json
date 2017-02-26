@@ -6,7 +6,7 @@
     "michael grandison <michael.grandison@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/michaelstoneg/Friend_Manager_App",
+  "homepage": "https://github.com/michaelstoneg/FriendManagerApp",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -20,7 +20,6 @@
     "satellizer": "^0.15.5",
     "angular-resource": "^1.5.8",
     "angular-carousel": "^1.0.1",
-    "angular-whimsical-ripple": "^1.0.0",
 
     "moment": "^2.16.0",
     "angular-chart.js": "^1.0.3",
