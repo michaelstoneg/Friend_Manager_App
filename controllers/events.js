@@ -1,4 +1,4 @@
-const Event = require('../models/event').eventModel;
+const Event = require('../models/event').EventModel;
 
 function eventsIndex(req, res) {
   Event.find((err, events) => {

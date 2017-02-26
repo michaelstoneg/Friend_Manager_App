@@ -11,7 +11,7 @@ const eventSchema = new mongoose.Schema({
     friend ids
   ],
   events: [
-    event ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Event'}
   ],
   rating: { type: Number, min: 0, max: 5 },
   times: {
@@ -25,11 +25,13 @@ const eventSchema = new mongoose.Schema({
     { type: String }
   ],
   wholiked: [
-    friends ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ],
   whodisliked: [
-    friend ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ]
 });
 
-module.exports = mongoose.model('Event', eventSchema);
+module.exports = {
+  LocationModel: mongoose.model('Location', locationSchema)
+};

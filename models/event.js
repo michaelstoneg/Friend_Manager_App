@@ -1,24 +1,23 @@
 const mongoose  = require('mongoose');
-const bcrypt    = require('bcrypt');
 
 const eventSchema = new mongoose.Schema({
   location: [
-    location ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Location'}
   ],
   name: { type: String },
   type: { type: String },
   activities: [
-      {
-        name: { type: String },
-        type: { type: String }
-      }
+    {
+      name: { type: String },
+      type: { type: String }
+    }
   ],
   duration: { type: Number },
   start: { type: Number },
   rating: { type: Number, min: 0, max: 5 },
   attendance: { type: Number},
   friends: [
-    friend ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ],
   description: { type: String },
   tags: [
@@ -37,11 +36,13 @@ const eventSchema = new mongoose.Schema({
     { type: String }
   ],
   wholiked: [
-    friends ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ],
   whodisliked: [
-    friend ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ]
 });
 
-module.exports = mongoose.model('Event', eventSchema);
+module.exports = {
+  EventModel: mongoose.model('Event', eventSchema)
+};

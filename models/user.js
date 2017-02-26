@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
     // eventSchema
   ],
   locations: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Location'}
     // locationSchema
   ]
 }, { timestamps: { createdAt: 'created_at' }});

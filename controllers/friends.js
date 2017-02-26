@@ -1,4 +1,4 @@
-const Friend = require('../models/friend').friendModel;
+const Friend = require('../models/friend').FriendModel;
 
 function friendsIndex(req, res) {
   Friend.find((err, friends) => {

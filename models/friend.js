@@ -38,9 +38,11 @@ const friendSchema = new mongoose.Schema({
     // eventSchema
   ],
   locations: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Location'}
     // locationSchema
   ]
 });
 
-module.exports = mongoose.model('Friend', friendSchema);
+module.exports = {
+  FriendModel: mongoose.model('Friend', friendSchema)
+};
