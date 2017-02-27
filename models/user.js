@@ -19,13 +19,13 @@ const userSchema = new mongoose.Schema({
     name: {type: String },
     type: {type: String }
   }],
-  sign: [{
+  sign: {
     asc: {type: String },
     sun: {type: String },
     moon: {type: String },
     mercury: {type: String },
     venus: {type: String }
-  }],
+  },
   allies: [
     {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
     // friendSchema

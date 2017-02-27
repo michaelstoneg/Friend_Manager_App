@@ -1,3 +1,33 @@
-<h1>Test</h1>
-<h1>You've made it this far. Congrats. Now let's get some friends!!</h1>
+<h1>Your profile</h1>
+
+<h3>Name: {{userShow.user.username}}</h3>
+<h3>DOB: {{userShow.user.dob}}</h3>
+<h3>Sex: {{userShow.user.sex}}</h3>
+<h3>Orientation: {{userShow.user.orientation}}</h3>
+<h3>Likes:</h3>
+<ul ng-repeat="like in userShow.user.likes">
+  <li>{{like}}</li>
+</ul>
+<h3>Dislikes:</h3>
+<ul ng-repeat="dislike in userShow.user.dislikes">
+  <li>{{dislike}}</li>
+</ul>
+<h3>Hobbies:</h3>
+<ul ng-repeat="hobby in userShow.user.hobbies">
+  <li>{{hobby.name}}</li>
+</ul>
+<h3>Interests:</h3>
+<ul ng-repeat="interest in userShow.user.interests">
+  <li>{{interest.name}}</li>
+</ul>
+<h3>Signs:</h3>
+<ul>
+  <li>Asc: {{userShow.user.sign[0].asc}}</li>
+  <li>Sun: {{userShow.user.sign[0].sun}}</li>
+  <li>Moon: {{userShow.user.sign[0].moon}}</li>
+  <li>Mercury: {{userShow.user.sign[0].mercury}}</li>
+  <li>Venus: {{userShow.user.sign[0].venus}}</li>
+</ul>
+
+
 <a ui-sref="userForm">Give us the deets</a>

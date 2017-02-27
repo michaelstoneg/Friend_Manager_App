@@ -9,7 +9,6 @@ UserFormController.$inject = ['$auth', 'User', '$state'];
 function UserFormController($auth, User, $state) {
   const userForm = this;
 
-
   //make objects
   userForm.hobbies = {
     name: undefined,
