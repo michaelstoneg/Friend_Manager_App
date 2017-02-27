@@ -30,10 +30,15 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/userShow.html',
       controller: 'UserShowController as userShow'
     })
+    .state('newFriendForm', {
+      url: '/newFriendForm',
+      templateUrl: '/templates/newFriendForm.html',
+      controller: 'NewFriendFormController as newFriendForm'
+    })
     .state('friendIndex', {
       url: '/friendIndex',
       templateUrl: '/templates/friendIndex.html',
-      controller: 'friendController as friendIndex'
+      controller: 'FriendIndexController as friendIndex'
     });
   $urlRouterProvider.otherwise('/');
 }

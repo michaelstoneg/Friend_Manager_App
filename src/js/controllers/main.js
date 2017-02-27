@@ -18,7 +18,7 @@ function MainController($auth, $state, $rootScope, User) {
 
   User.get({ id: $auth.getPayload()._id }, (user) => {
     main.user = user;
-    console.log('user', main.user);
+    console.log('current user', main.user);
   });
 
   const protectedStates = ['friendIndex'];
