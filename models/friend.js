@@ -5,6 +5,10 @@ const friendSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   passwordHash: { type: String },
   name: { type: String },
+  contact: {
+    email: { type: String },
+    phone: { type: Number }
+  },
   dob: {type: Date },
   gender: { type: String },
   orientation: {type: String },
@@ -22,7 +26,7 @@ const friendSchema = new mongoose.Schema({
     asc: {type: String },
     sun: {type: String },
     moon: {type: String },
-    merc: {type: String },
+    mercury: {type: String },
     venus: {type: String }
   }],
   allies: [

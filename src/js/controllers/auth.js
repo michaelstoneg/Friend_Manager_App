@@ -10,7 +10,7 @@ function RegisterController($auth, $state, $window) {
     $auth.signup(register.user)
       .then((res) => {
         $window.localStorage.setItem('token', res.data.token);
-        $state.go('test');
+        $state.go('userForm');
       });
   }
   register.submit = submit;
@@ -24,16 +24,7 @@ function LoginController($auth, $state, User) {
   function submit() {
     $auth.login(login.credentials)
     .then(() => {
-
-      User.get({ id: $auth.getPayload()._id }, (user) => {
-        login.user = user;
-        console.log('you', login.user);
-        console.log('is this your first time', login.user.isFirstTime);
-
-        if(login.user.isFirstTime) {
-          $state.go('test');
-        }
-      });
+      $state.go('test');
     });
   }
 

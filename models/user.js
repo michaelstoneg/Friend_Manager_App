@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     asc: {type: String },
     sun: {type: String },
     moon: {type: String },
-    merc: {type: String },
+    mercury: {type: String },
     venus: {type: String }
   }],
   allies: [

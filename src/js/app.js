@@ -20,6 +20,16 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/register.html',
       controller: 'RegisterController as register'
     })
+    .state('userForm', {
+      url: '/userForm',
+      templateUrl: '/templates/userForm.html',
+      controller: 'UserFormController as userForm'
+    })
+    .state('userShow', {
+      url: '/userShow',
+      templateUrl: '/templates/userShow.html',
+      controller: 'UserShowController as userShow'
+    })
     .state('friendIndex', {
       url: '/friendIndex',
       templateUrl: '/templates/friendIndex.html',
