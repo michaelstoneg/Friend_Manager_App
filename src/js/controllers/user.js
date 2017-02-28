@@ -34,7 +34,6 @@ function UserFormController($auth, User, $state) {
     //push objects to array
     userForm.user.hobbies.push(userForm.hobbies);
     userForm.user.interests.push(userForm.interests);
-    userForm.user.sign.push(userForm.sign);
     console.log('data to be saved', userForm.user, 'user object hobbies', userForm.user.hobbies, 'user object interests', userForm.user.interests, 'user object sign', userForm.user.sign);
 
     userForm.user.$update(() => {

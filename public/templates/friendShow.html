@@ -3,6 +3,26 @@
 <ul>
   <li>Name: {{friendShow.friend.name}}</li>
   <li>ID: {{friendShow.friend._id}}</li>
+  <li>contact: {{friendShow.friend.contact}</li>
   <li>Dob: {{friendShow.friend.dob}}</li>
-  <li>Name: {{friendShow.friend.name}}</li>
+  <li>Gender: {{friendShow.friend.gender}}</li>
+  <li>Orientation: {{friendShow.friend.orientation}}</li>
+  <li>Likes:</li>
+  <ul ng-repeat="like in friendShow.friend.likes">
+    <li>{{like}}</li>
+  </ul>
+  <li>Dislikes:</li>
+  <ul ng-repeat="dislike in friendShow.friend.dislikes">
+    <li>{{dislike}}</li>
+  </ul>
+  <li>Hobbies:</li>
+  <ul ng-repeat="hobby in friendShow.friend.hobbies">
+    <li>Name: {{hobby.name}}</li>
+    <li>Type: {{hobby.type}}</li>
+  </ul>
+  <li>Interests:</li>
+  <ul ng-repeat="interest in friendShow.friend.interests">
+    <li>Name: {{interest.name}}</li>
+    <li>Type: {{interest.type}}</li>
+  </ul>
 </ul>

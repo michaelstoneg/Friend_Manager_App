@@ -44,6 +44,16 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/friend/:id',
       templateUrl: '/templates/friendShow.html',
       controller: 'FriendShowController as friendShow'
+    })
+    .state('newEventForm', {
+      url: '/newEventForm',
+      templateUrl: '/templates/newEventForm.html',
+      controller: 'NewEventFormController as newEventForm'
+    })
+    .state('eventIndex', {
+      url: '/eventIndex',
+      templateUrl: '/templates/eventIndex.html',
+      controller: 'EventIndexController as eventIndex'
     });
   $urlRouterProvider.otherwise('/');
 }

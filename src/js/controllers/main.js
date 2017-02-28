@@ -2,8 +2,8 @@ angular.module('FriendManagerApp')
   .controller('MainController', MainController);
 
 
-MainController.$inject = ['$auth', '$state', '$rootScope', 'User'];
-function MainController($auth, $state, $rootScope, User) {
+MainController.$inject = ['$auth', '$state', '$rootScope', 'User', 'Friend'];
+function MainController($auth, $state, $rootScope, User, Friend) {
   const main = this;
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
@@ -16,10 +16,14 @@ function MainController($auth, $state, $rootScope, User) {
   }
 
 
+  //current user
   User.get({ id: $auth.getPayload()._id }, (user) => {
     main.user = user;
     console.log('current user', main.user);
   });
+
+  //all friends
+  main.allFriends = Friend.query();
 
   const protectedStates = [];
   function secureState(e, toState) {
@@ -39,6 +43,6 @@ function MainController($auth, $state, $rootScope, User) {
   function toggleMenu() {
     main.menuVisible = main.menuVisible ? false : true;
   }
-  
+
   main.toggleMenu = toggleMenu;
 }

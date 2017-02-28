@@ -1,4 +1,4 @@
-<h3>Deets Please</h3>
+<h3>New Friend Deets Please</h3>
 
 <form novalidate ng-submit="newFriendForm.submit()">
   <div class="row">
@@ -7,11 +7,16 @@
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
+    <input class="u-full-width" type="String" placeholder="email..." ng-model="newFriendForm.contact.email">
+    <input class="u-full-width" type="Number" placeholder="phone..." ng-model="newFriendForm.contact.phone">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
     <input class="u-full-width" type="Date" placeholder="DOB..." ng-model="newFriendForm.newFriend.dob">
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="text" placeholder="Sex..." ng-model="newFriendForm.newFriend.sex">
+    <input class="u-full-width" type="text" placeholder="Sex..." ng-model="newFriendForm.newFriend.gender">
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
@@ -24,22 +29,22 @@
     <label class="formLabel"></label><br>
     <input class="u-full-width" type="text" placeholder="Dislikes.." ng-model="newFriendForm.newFriend.dislikes">
   </div>
-  <!-- <div class="row">
+  <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="string" placeholder="Hobbies name.." ng-model="userForm.hobbies.name">
-    <input class="u-full-width" type="string" placeholder="Hobbies type.." ng-model="userForm.hobbies.type">
+    <input class="u-full-width" type="string" placeholder="Hobbies name.." ng-model="newFriendForm.hobbies.name">
+    <input class="u-full-width" type="string" placeholder="Hobbies type.." ng-model="newFriendForm.hobbies.type">
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="text" placeholder="Interests name.." ng-model="userForm.interests.name">
-    <input class="u-full-width" type="text" placeholder="Interests type.." ng-model="userForm.interests.type">
+    <input class="u-full-width" type="text" placeholder="Interests name.." ng-model="newFriendForm.interests.name">
+    <input class="u-full-width" type="text" placeholder="Interests type.." ng-model="newFriendForm.interests.type">
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="text" placeholder="Sign asc.." ng-model="userForm.sign.asc">
-    <input class="u-full-width" type="text" placeholder="Sign sun.." ng-model="userForm.sign.sun">
-    <input class="u-full-width" type="text" placeholder="Sign moon.." ng-model="userForm.sign.moon">
-    <input class="u-full-width" type="text" placeholder="Sign mercury.." ng-model="userForm.sign.mercury">
-    <input class="u-full-width" type="text" placeholder="Sign venus.." ng-model="userForm.sign.venus">
-  </div> -->
-  <button class="buttonLog" id="newFriendFormButton">Submit</buttonsign
+    <input class="u-full-width" type="text" placeholder="Sign asc.." ng-model="newFriendForm.sign.asc">
+    <input class="u-full-width" type="text" placeholder="Sign sun.." ng-model="newFriendForm.sign.sun">
+    <input class="u-full-width" type="text" placeholder="Sign moon.." ng-model="newFriendForm.sign.moon">
+    <input class="u-full-width" type="text" placeholder="Sign mercury.." ng-model="newFriendForm.sign.mercury">
+    <input class="u-full-width" type="text" placeholder="Sign venus.." ng-model="newFriendForm.sign.venus">
+  </div>
+  <button class="buttonLog" id="newFriendFormButton">Submit</button>
