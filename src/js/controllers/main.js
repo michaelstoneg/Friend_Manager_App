@@ -21,7 +21,7 @@ function MainController($auth, $state, $rootScope, User) {
     console.log('current user', main.user);
   });
 
-  const protectedStates = ['friendIndex'];
+  const protectedStates = [];
   function secureState(e, toState) {
     main.menuVisible = false;
     main.message = null;
@@ -39,5 +39,6 @@ function MainController($auth, $state, $rootScope, User) {
   function toggleMenu() {
     main.menuVisible = main.menuVisible ? false : true;
   }
+  
   main.toggleMenu = toggleMenu;
 }

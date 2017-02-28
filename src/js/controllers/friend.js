@@ -1,5 +1,6 @@
 angular.module('FriendManagerApp')
   .controller('FriendIndexController', FriendIndexController)
+  .controller('FriendShowController', FriendShowController)
   .controller('NewFriendFormController', NewFriendFormController);
 
 
@@ -7,11 +8,19 @@ FriendIndexController.$inject = ['$auth', 'User', '$state', 'Friend'];
 function FriendIndexController($auth, User, $state, Friend) {
   const friendIndex = this;
 
-  friendIndex.index = Friend.query();
+  friendIndex.all = Friend.query();
+  console.log('all friends', friendIndex.all);
+}
 
-  console.log('all friends', friendIndex.index);
+FriendShowController.$inject = ['$auth', 'User', '$state', 'Friend'];
+function FriendShowController($auth, User, $state, Friend) {
+  const friendShow = this;
+
+  friendShow.friend = Friend.get($state.params);
+  console.log('this friend', friendShow.friend);
 
 }
+
 
 NewFriendFormController.$inject = ['$auth', '$state', 'Friend'];
 function NewFriendFormController($auth, $state, Friend) {
@@ -23,11 +32,7 @@ function NewFriendFormController($auth, $state, Friend) {
   // }
 
   function createNewFriend () {
-
-    console.log('data to be saved', newFriendForm.newFriend, 'new friend user', newFriendForm.newFriend.user);
-
     Friend.save(newFriendForm.newFriend, () => {
-      newFriendForm.newFriend = {};
       $state.go('friendIndex');
     });
   }

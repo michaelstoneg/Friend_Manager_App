@@ -39,6 +39,11 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/friendIndex',
       templateUrl: '/templates/friendIndex.html',
       controller: 'FriendIndexController as friendIndex'
+    })
+    .state('friendShow', {
+      url: '/friend/:id',
+      templateUrl: '/templates/friendShow.html',
+      controller: 'FriendShowController as friendShow'
     });
   $urlRouterProvider.otherwise('/');
 }

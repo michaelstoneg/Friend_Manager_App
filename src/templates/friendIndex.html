@@ -1,1 +1,7 @@
 <h1>All your friends</h1>
+
+<ul ng-repeat="friend in friendIndex.all">
+  <li>Name: {{friend.name}}</li>
+  <li>ID: {{friend._id}}</li>
+  <button type="button" name="button" ui-sref="friendShow({id: friend._id})">Details</button>
+</ul>
