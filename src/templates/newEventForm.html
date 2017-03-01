@@ -34,7 +34,7 @@
       <li ng-repeat="friend in main.allFriends">
         <label>
           {{friend.name}}
-          <input type="checkbox" ng-true-value="{{ friend.id }}" ng-false-value="null" id="{{friend.name}}" ng-model="newEventForm.friend._id[$index]">
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.friends[$index]">
         </li>
       </ul>
   </div>

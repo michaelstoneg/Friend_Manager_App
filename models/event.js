@@ -17,7 +17,7 @@ const eventSchema = new mongoose.Schema({
   rating: { type: Number, min: 0, max: 5 },
   attendance: { type: Number},
   friends: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    // {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ],
   description: { type: String },
   tags: [

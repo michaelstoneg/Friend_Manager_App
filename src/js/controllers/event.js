@@ -13,16 +13,16 @@ function NewEventFormController($auth, $state, Event) {
   };
   newEventForm.newEvent.activities = [];
 
+  newEventForm.newEvent.friends = [];
+
 
 
   function createNewEvent () {
 
-    newEventForm.newEvent.activities.push(newEventForm.activities);
-
-    console.log('new event', newEventForm.newEvent);
+    console.log('new event', newEventForm.newEvent, 'friends', newEventForm.newEvent.friends);
 
     Event.save(newEventForm.newEvent, () => {
-      $state.go('eventIndex');
+      $state.go('test');
     });
   }
 
