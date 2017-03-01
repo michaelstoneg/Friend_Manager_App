@@ -12,12 +12,23 @@ function NewEventFormController($auth, $state, Event) {
     type: undefined
   };
   newEventForm.newEvent.activities = [];
+  newEventForm.newEvent.substances = [];
+
+  newEventForm.substances = {
+    name: undefined,
+    type: undefined
+  };
 
   newEventForm.newEvent.friends = [];
+  newEventForm.newEvent.whoLiked = [];
+  newEventForm.newEvent.whoDisliked = [];
 
 
 
   function createNewEvent () {
+
+    newEventForm.newEvent.activities.push(newEventForm.activities);
+    newEventForm.newEvent.substances.push(newEventForm.substances);
 
     console.log('new event', newEventForm.newEvent, 'friends', newEventForm.newEvent.friends);
 

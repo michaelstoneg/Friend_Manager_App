@@ -26,6 +26,9 @@ function UserFormController($auth, User, $state) {
     venus: undefined
   };
 
+  userForm.allies = [];
+  userForm.enemies = [];
+
   userForm.user = User.get({ id: $auth.getPayload()._id });
 
   function submit() {
@@ -34,6 +37,9 @@ function UserFormController($auth, User, $state) {
     //push objects to array
     userForm.user.hobbies.push(userForm.hobbies);
     userForm.user.interests.push(userForm.interests);
+    userForm.user.allies = userForm.allies;
+    userForm.user.allies = userForm.enemies;
+
     console.log('data to be saved', userForm.user, 'user object hobbies', userForm.user.hobbies, 'user object interests', userForm.user.interests, 'user object sign', userForm.user.sign);
 
     userForm.user.$update(() => {

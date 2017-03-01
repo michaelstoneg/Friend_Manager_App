@@ -38,4 +38,24 @@
     <input class="u-full-width" type="text" placeholder="Sign mercury.." ng-model="userForm.sign.mercury">
     <input class="u-full-width" type="text" placeholder="Sign venus.." ng-model="userForm.sign.venus">
   </div>
+  <div class="row">
+    <h3>Allies</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="userForm.allies[$index]">
+        </li>
+      </ul>
+  </div>
+  <div class="row">
+    <h3>Enemies</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="userForm.enemies[$index]">
+        </li>
+      </ul>
+  </div>
   <button class="buttonLog" id="userFormButton">Submit</button>

@@ -24,10 +24,10 @@ const eventSchema = new mongoose.Schema({
     { type: String }
   ],
   substances: [
-    {
-      name: { type: String },
-      amount: { type: Number }
-    }
+    // {
+    //   name: { type: String },
+    //   amount: { type: Number }
+    // }
   ],
   positives: [
     { type: String }

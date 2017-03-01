@@ -29,7 +29,8 @@
   <div class="row">
     <label class="formLabel"></label><br>
     <input class="u-full-width" type="Number" placeholder="Attendance.." ng-model="newEventForm.newEvent.attendance">
-  </div><div class="row">
+  </div>
+  <div class="row">
     <ul>
       <li ng-repeat="friend in main.allFriends">
         <label>
@@ -38,21 +39,46 @@
         </li>
       </ul>
   </div>
-  <!-- <div class="row">
+  <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="string" placeholder="Hobbies name.." ng-model="newFriendForm.hobbies.name">
-  </div> -->
-  <!-- <div class="row">
-    <label class="formLabel"></label><br>
-    <input class="u-full-width" type="text" placeholder="Interests name.." ng-model="newFriendForm.interests.name">
-    <input class="u-full-width" type="text" placeholder="Interests type.." ng-model="newFriendForm.interests.type">
+    <input class="u-full-width" type="string" placeholder="Description..." ng-model="newEventForm.newEvent.description">
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="text" placeholder="Sign asc.." ng-model="newFriendForm.sign.asc">
-    <input class="u-full-width" type="text" placeholder="Sign sun.." ng-model="newFriendForm.sign.sun">
-    <input class="u-full-width" type="text" placeholder="Sign moon.." ng-model="newFriendForm.sign.moon">
-    <input class="u-full-width" type="text" placeholder="Sign mercury.." ng-model="newFriendForm.sign.mercury">
-    <input class="u-full-width" type="text" placeholder="Sign venus.." ng-model="newFriendForm.sign.venus">
-  </div> -->
+    <input class="u-full-width" type="string" placeholder="Tags..." ng-model="newEventForm.newEvent.tags">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="Substance name..." ng-model="newEventForm.substances.name">
+    <input class="u-full-width" type="Number" placeholder="Substance type..." ng-model="newEventForm.substances.amount">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="Positives..." ng-model="newEventForm.newEvent.positives">
+  </div>
+  <div class="row">
+    <div class="row">
+      <label class="formLabel"></label><br>
+      <input class="u-full-width" type="string" placeholder="Negatives..." ng-model="newEventForm.newEvent.negatives">
+    </div>
+  <div class="row">
+    <h3>Who Liked</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.whoLiked[$index]">
+        </li>
+      </ul>
+  </div>
+  <div class="row">
+    <h3>Who Disliked</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.whoDisliked[$index]">
+        </li>
+      </ul>
+  </div>
   <button class="buttonLog" id="newEventFormButton">Submit</button>
