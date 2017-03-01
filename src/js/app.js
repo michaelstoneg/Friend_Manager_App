@@ -54,6 +54,11 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/eventIndex',
       templateUrl: '/templates/eventIndex.html',
       controller: 'EventIndexController as eventIndex'
+    })
+    .state('eventShow', {
+      url: '/event/:id',
+      templateUrl: '/templates/eventShow.html',
+      controller: 'EventShowController as eventShow'
     });
   $urlRouterProvider.otherwise('/');
 }

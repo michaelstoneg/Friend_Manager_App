@@ -67,7 +67,7 @@
       <li ng-repeat="friend in main.allFriends">
         <label>
           {{friend.name}}
-          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.whoLiked[$index]">
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.wholiked[$index]">
         </li>
       </ul>
   </div>
@@ -77,7 +77,7 @@
       <li ng-repeat="friend in main.allFriends">
         <label>
           {{friend.name}}
-          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.whoDisliked[$index]">
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.whodisliked[$index]">
         </li>
       </ul>
   </div>

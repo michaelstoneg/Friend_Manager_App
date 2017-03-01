@@ -1,1 +1,8 @@
 <h1>All Events</h1>
+
+
+<ul ng-repeat="event in eventIndex.all">
+  <li>Name: {{event.name}}</li>
+  <li>ID: {{event._id}}</li>
+  <button type="button" name="button" ui-sref="eventShow({id: event._id})">Details</button>
+</ul>

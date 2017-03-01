@@ -28,12 +28,12 @@ const friendSchema = new mongoose.Schema({
     venus: {type: String }
   },
   allies: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
-    // friendSchema
+    // {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    // // friendSchema
   ],
   enemies: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
-    // friendSchema
+    // {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    // // friendSchema
   ],
   events: [
     {type: mongoose.Schema.Types.ObjectId, ref: 'Event'}
