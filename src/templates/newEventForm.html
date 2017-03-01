@@ -16,6 +16,16 @@
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
+    <input class="u-full-width" type="String" placeholder="activities name..." ng-model="newEventForm.activities1.name">
+    <input class="u-full-width" type="String" placeholder="activities type..." ng-model="newEventForm.activities1.type">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="String" placeholder="activities name..." ng-model="newEventForm.activities2.name">
+    <input class="u-full-width" type="String" placeholder="activities type..." ng-model="newEventForm.activities2.type">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
     <input class="u-full-width" type="Number" placeholder="Duration..." ng-model="newEventForm.newEvent.duration">
   </div>
   <div class="row">
@@ -50,7 +60,17 @@
   <div class="row">
     <label class="formLabel"></label><br>
     <input class="u-full-width" type="string" placeholder="Substance name..." ng-model="newEventForm.substances.name">
-    <input class="u-full-width" type="Number" placeholder="Substance type..." ng-model="newEventForm.substances.amount">
+    <input class="u-full-width" type="Number" placeholder="Substance amount in grams..." ng-model="newEventForm.substances.amount">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="Substance name..." ng-model="newEventForm.substances1.name">
+    <input class="u-full-width" type="Number" placeholder="Substance amount in grams..." ng-model="newEventForm.substances1.amount">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="Substance name..." ng-model="newEventForm.substances2.name">
+    <input class="u-full-width" type="Number" placeholder="Substance amount in grams..." ng-model="newEventForm.substances2.amount">
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
@@ -67,7 +87,7 @@
       <li ng-repeat="friend in main.allFriends">
         <label>
           {{friend.name}}
-          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.wholiked[$index]">
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value="" ng-model="newEventForm.newEvent.wholiked[$index]">
         </li>
       </ul>
   </div>
@@ -77,7 +97,7 @@
       <li ng-repeat="friend in main.allFriends">
         <label>
           {{friend.name}}
-          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value=null ng-model="newEventForm.newEvent.whodisliked[$index]">
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value="" ng-model="newEventForm.newEvent.whodisliked[$index]">
         </li>
       </ul>
   </div>

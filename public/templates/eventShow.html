@@ -1,1 +1,46 @@
 <h1>Event Details</h1>
+
+<ul>
+  <li>Name: {{ eventShow.event.name }}</li>
+  <li>type: {{ eventShow.event.type }}</li>
+  <li>activities</li>
+  <ul ng-repeat="activity in eventShow.event.activities">
+    <li>Name: {{ activity.name }}</li>
+    <li>Type: {{ activity.type }}</li>
+  </ul>
+  <li>duration: {{ eventShow.event.duration }} hours</li>
+  <li>start time: {{ eventShow.event.start }}</li>
+  <li>rating: {{ eventShow.event.rating }}</li>
+  <li>attendance: {{ eventShow.event.attendance }}</li>
+  <li>Friends</li>
+  <ul ng-repeat="friend in eventShow.event.friends">
+    <li>ID: {{ friend }}</li>
+  </ul>
+  <li>Description: {{ eventShow.event.description }}</li>
+  <li>Tags</li>
+  <ul ng-repeat="tag in eventShow.event.tags">
+    <li>{{ tag }}</li>
+  </ul>
+  <li>Substances</li>
+  <ul ng-repeat="substance in eventShow.event.substances">
+    <li>Name: {{ substance.name }}</li>
+    <li>Amount: {{ substance.amount }}</li>
+  </ul>
+  <li>Positives</li>
+  <ul ng-repeat="positive in eventShow.event.positives">
+    <li>{{ positive }}</li>
+  </ul>
+  <li>Negatives</li>
+  <ul ng-repeat="negative in eventShow.event.negatives">
+    <li>{{ negative }}</li>
+  </ul>
+  <li>Who Liked</li>
+  <ul ng-repeat="like in eventShow.event.wholiked">
+    <li>{{ like }}</li>
+  </ul>
+  <li>Who Disliked</li>
+  <ul ng-repeat="dislike in eventShow.event.whodisliked">
+    <li>{{ dislike }}</li>
+  </ul>
+</ul>
+{{ eventShow.event.whodisliked }}

@@ -30,20 +30,20 @@ router.route('/friends/:id')
 
 router.route('/events')
   .get(eventsController.index)
-  .post(friendsController.create);
+  .post(eventsController.create);
 
 router.route('/events/:id')
   .get(eventsController.show)
   .put(eventsController.update)
   .delete(eventsController.delete);
 
-router.route('/locations')
-  .get(eventsController.index)
-  .post(friendsController.create);
-
-router.route('/locations/:id')
-  .get(eventsController.show)
-  .put(eventsController.update)
-  .delete(eventsController.delete);
+// router.route('/locations')
+//   .get(locationsController.index)
+//   .post(locationsController.create);
+//
+// router.route('/locations/:id')
+//   .get(locationsController.show)
+//   .put(locationsController.update)
+//   .delete(locationsController.delete);
 
 module.exports = router;

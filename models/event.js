@@ -36,10 +36,10 @@ const eventSchema = new mongoose.Schema({
     { type: String }
   ],
   wholiked: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    // {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ],
   whodisliked: [
-    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
+    // {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ]
 });
 

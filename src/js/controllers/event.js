@@ -33,13 +33,30 @@ function NewEventFormController($auth, $state, Event) {
     name: undefined,
     type: undefined
   };
-  newEventForm.newEvent.activities = [];
-  newEventForm.newEvent.substances = [];
+  newEventForm.activities1 = {
+    name: undefined,
+    type: undefined
+  };
+  newEventForm.activities2 = {
+    name: undefined,
+    type: undefined
+  };
 
   newEventForm.substances = {
     name: undefined,
     type: undefined
   };
+  newEventForm.substances1 = {
+    name: undefined,
+    type: undefined
+  };
+  newEventForm.substances2 = {
+    name: undefined,
+    type: undefined
+  };
+
+  newEventForm.newEvent.activities = [];
+  newEventForm.newEvent.substances = [];
 
   newEventForm.newEvent.friends = [];
   newEventForm.newEvent.wholiked = [];
@@ -47,8 +64,30 @@ function NewEventFormController($auth, $state, Event) {
 
   function createNewEvent () {
 
-    newEventForm.newEvent.activities.push(newEventForm.activities);
-    newEventForm.newEvent.substances.push(newEventForm.substances);
+    newEventForm.newEvent.activities.push(newEventForm.activities, newEventForm.activities1, newEventForm.activities2);
+    newEventForm.newEvent.substances.push(newEventForm.substances, newEventForm.substances1, newEventForm.substances2);
+
+    // for (const i of newEventForm.newEvent.whodliked) {
+    //   if (i === undefined ) {
+    //     newEventForm.newEvent.whodliked.splice(i, 1);
+    //   }
+    // }
+
+    for (const i of newEventForm.newEvent.whodisliked) {
+      console.log(i);
+      if (i === undefined ) {
+        newEventForm.newEvent.whodisliked.splice(i, 1);
+        console.log('found a null');
+      }
+      console.log('null free array', newEventForm.newEvent.whodisliked);
+    }
+
+
+
+
+    // newEventForm.newEvent.whodisliked.filter((value) => {
+    //   return value !== undefined;
+    // });
 
     console.log('new event', newEventForm.newEvent);
 
