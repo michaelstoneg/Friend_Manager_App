@@ -67,27 +67,19 @@ function NewEventFormController($auth, $state, Event) {
     newEventForm.newEvent.activities.push(newEventForm.activities, newEventForm.activities1, newEventForm.activities2);
     newEventForm.newEvent.substances.push(newEventForm.substances, newEventForm.substances1, newEventForm.substances2);
 
-    // for (const i of newEventForm.newEvent.whodliked) {
-    //   if (i === undefined ) {
-    //     newEventForm.newEvent.whodliked.splice(i, 1);
-    //   }
-    // }
+    const whoDisliked = [];
+    const whoLiked = [];
 
-    for (const i of newEventForm.newEvent.whodisliked) {
-      console.log(i);
-      if (i === undefined ) {
-        newEventForm.newEvent.whodisliked.splice(i, 1);
-        console.log('found a null');
-      }
-      console.log('null free array', newEventForm.newEvent.whodisliked);
-    }
+    newEventForm.newEvent.whodisliked.forEach((item) => {
+      if(item) whoDisliked.push(item);
+    });
 
+    newEventForm.newEvent.wholiked.forEach((item) => {
+      if(item) whoLiked.push(item);
+    });
+    newEventForm.newEvent.whodisliked = whoDisliked;
+    newEventForm.newEvent.wholiked = whoLiked;
 
-
-
-    // newEventForm.newEvent.whodisliked.filter((value) => {
-    //   return value !== undefined;
-    // });
 
     console.log('new event', newEventForm.newEvent);
 

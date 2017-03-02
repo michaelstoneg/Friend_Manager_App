@@ -97,7 +97,7 @@
       <li ng-repeat="friend in main.allFriends">
         <label>
           {{friend.name}}
-          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value="" ng-model="newEventForm.newEvent.whodisliked[$index]">
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-model="newEventForm.newEvent.whodisliked[$index]">
         </li>
       </ul>
   </div>
