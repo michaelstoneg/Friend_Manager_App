@@ -61,6 +61,9 @@ function NewFriendFormController($auth, $state, Friend) {
     newFriendForm.newFriend.interests.push(newFriendForm.interests);
     newFriendForm.newFriend.contact = newFriendForm.contact;
 
+    newFriendForm.newFriend.likes = newFriendForm.newFriend.likes.split(',');
+    newFriendForm.newFriend.dislikes = newFriendForm.newFriend.dislikes.split(',');
+
     console.log('new friend', newFriendForm.newFriend);
 
     Friend.save(newFriendForm.newFriend, () => {
