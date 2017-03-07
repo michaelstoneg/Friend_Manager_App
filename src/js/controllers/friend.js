@@ -45,6 +45,23 @@ function NewFriendFormController($auth, $state, Friend) {
     name: undefined,
     type: undefined
   };
+  newFriendForm.hobbies1 = {
+    name: undefined,
+    type: undefined
+  };
+  newFriendForm.interests1 = {
+    name: undefined,
+    type: undefined
+  };
+  newFriendForm.hobbies2 = {
+    name: undefined,
+    type: undefined
+  };
+  newFriendForm.interests2 = {
+    name: undefined,
+    type: undefined
+  };
+
   newFriendForm.sign = {
     asc: undefined,
     sun: undefined,
@@ -57,8 +74,8 @@ function NewFriendFormController($auth, $state, Friend) {
 
   function createNewFriend () {
 
-    newFriendForm.newFriend.hobbies.push(newFriendForm.hobbies);
-    newFriendForm.newFriend.interests.push(newFriendForm.interests);
+    newFriendForm.newFriend.hobbies.push(newFriendForm.hobbies, newFriendForm.hobbies1, newFriendForm.hobbies2);
+    newFriendForm.newFriend.interests.push(newFriendForm.interests, newFriendForm.interests1, newFriendForm.interests2);
     newFriendForm.newFriend.contact = newFriendForm.contact;
 
     newFriendForm.newFriend.likes = newFriendForm.newFriend.likes.split(',');
