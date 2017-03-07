@@ -3,6 +3,7 @@ const authController = require('../controllers/auth');
 const usersController = require('../controllers/users');
 const friendsController = require('../controllers/friends');
 const eventsController = require('../controllers/events');
+const locationsController = require('../controllers/locations');
 
 router
   .post('/login', authController.login)
@@ -37,13 +38,13 @@ router.route('/events/:id')
   .put(eventsController.update)
   .delete(eventsController.delete);
 
-// router.route('/locations')
-//   .get(locationsController.index)
-//   .post(locationsController.create);
-//
-// router.route('/locations/:id')
-//   .get(locationsController.show)
-//   .put(locationsController.update)
-//   .delete(locationsController.delete);
+router.route('/locations')
+  .get(locationsController.index)
+  .post(locationsController.create);
+
+router.route('/locations/:id')
+  .get(locationsController.show)
+  .put(locationsController.update)
+  .delete(locationsController.delete);
 
 module.exports = router;

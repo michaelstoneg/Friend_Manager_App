@@ -2,8 +2,8 @@ angular.module('FriendManagerApp')
   .controller('MainController', MainController);
 
 
-MainController.$inject = ['$auth', '$state', '$rootScope', 'User', 'Friend'];
-function MainController($auth, $state, $rootScope, User, Friend) {
+MainController.$inject = ['$auth', '$state', '$rootScope', 'User', 'Friend', 'Event'];
+function MainController($auth, $state, $rootScope, User, Friend, Event) {
   const main = this;
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;

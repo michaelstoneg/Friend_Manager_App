@@ -80,6 +80,8 @@ function NewFriendFormController($auth, $state, Friend) {
 
     newFriendForm.newFriend.likes = newFriendForm.newFriend.likes.split(',');
     newFriendForm.newFriend.dislikes = newFriendForm.newFriend.dislikes.split(',');
+    console.log('split likes', newFriendForm.newFriend.likes);
+    console.log('split dislikes', newFriendForm.newFriend.dislikes);
 
     console.log('new friend', newFriendForm.newFriend);
 

@@ -1,6 +1,6 @@
 <h1>New Location Deets</h1>
 
-<form novalidate ng-submit="newEventForm.submit()">
+<form novalidate ng-submit="newLocationForm.submit()">
   <div class="row">
     <label class="formLabel"></label><br>
     <input class="u-full-width" type="string" placeholder="name..." ng-model="newLocationForm.newLocation.name">
@@ -58,8 +58,8 @@
   </div>
   <div class="row">
     <label class="formLabel"></label><br>
-    <input class="u-full-width" type="Time" placeholder="Location opening time..." ng-model="newLocationForm.openTime">
-    <input class="u-full-width" type="Time" placeholder="Location closing time..." ng-model="newLocationForm.closeTime">
+    <input class="u-full-width" type="Time" placeholder="Location opening time..." ng-model="newLocationForm.times.open">
+    <input class="u-full-width" type="Time" placeholder="Location closing time..." ng-model="newLocationForm.times.close">
   </div>
 
   <div class="row">
@@ -91,4 +91,4 @@
         </li>
       </ul>
   </div>
-  <button class="buttonLog" id="newEventFormButton">Submit</button>
+  <button class="buttonLog" id="newLocationFormButton">Submit</button>

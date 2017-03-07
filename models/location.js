@@ -8,7 +8,7 @@ const locationSchema = new mongoose.Schema({
   type: { type: String },
   price: { type: Number, min: 0, max: 5 },
   friends: [
-    friend ids
+    {type: mongoose.Schema.Types.ObjectId, ref: 'Friend'}
   ],
   events: [
     {type: mongoose.Schema.Types.ObjectId, ref: 'Event'}

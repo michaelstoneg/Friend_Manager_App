@@ -1,0 +1,8 @@
+<h1>All Locations</h1>
+
+
+<ul ng-repeat="location in locationIndex.all">
+  <li>Name: {{location.name}}</li>
+  <li>ID: {{location._id}}</li>
+  <button type="button" name="button" ui-sref="locationShow({id: location._id})">Details</button>
+</ul>

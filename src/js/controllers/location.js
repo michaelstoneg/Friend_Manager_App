@@ -1,7 +1,7 @@
 angular.module('FriendManagerApp')
   .controller('NewLocationFormController', NewLocationFormController)
-  .controller('LocationIndexController', LocationIndexController)
-  .controller('LocationShowController', LocationShowController);
+  .controller('LocationIndexController', LocationIndexController);
+  // .controller('LocationShowController', LocationShowController);
 
 
 LocationIndexController.$inject = ['$auth', '$state', 'Location'];
@@ -28,68 +28,58 @@ NewLocationFormController.$inject = ['$auth', '$state', 'Location'];
 function NewLocationFormController($auth, $state, Location) {
   const newLocationForm = this;
 
-  newEventForm.newEvent = {};
-  newEventForm.activities = {
-    name: undefined,
-    type: undefined
-  };
-  newEventForm.activities1 = {
-    name: undefined,
-    type: undefined
-  };
-  newEventForm.activities2 = {
-    name: undefined,
-    type: undefined
+  newLocationForm.newLocation = {};
+  newLocationForm.times = {
+    open: undefined,
+    close: undefined
   };
 
-  newEventForm.substances = {
-    name: undefined,
-    type: undefined
-  };
-  newEventForm.substances1 = {
-    name: undefined,
-    type: undefined
-  };
-  newEventForm.substances2 = {
-    name: undefined,
-    type: undefined
-  };
-
-  newEventForm.newEvent.activities = [];
-  newEventForm.newEvent.substances = [];
-
-  newEventForm.newEvent.friends = [];
-  newEventForm.newEvent.wholiked = [];
-  newEventForm.newEvent.whodisliked = [];
+  newLocationForm.newLocation.friends = [];
+  newLocationForm.newLocation.events = [];
+  newLocationForm.newLocation.wholiked = [];
+  newLocationForm.newLocation.whodisliked = [];
 
   function createNewLocation () {
 
-    newEventForm.newEvent.activities.push(newEventForm.activities, newEventForm.activities1, newEventForm.activities2);
-    newEventForm.newEvent.substances.push(newEventForm.substances, newEventForm.substances1, newEventForm.substances2);
-
     const whoDisliked = [];
     const whoLiked = [];
+    const friends = [];
+    const events = [];
 
-    newEventForm.newEvent.whodisliked.forEach((item) => {
+    newLocationForm.newLocation.whodisliked.forEach((item) => {
       if(item) whoDisliked.push(item);
     });
 
-    newEventForm.newEvent.wholiked.forEach((item) => {
+    newLocationForm.newLocation.wholiked.forEach((item) => {
       if(item) whoLiked.push(item);
     });
-    newEventForm.newEvent.whodisliked = whoDisliked;
-    newEventForm.newEvent.wholiked = whoLiked;
+
+    newLocationForm.newLocation.friends.forEach((item) => {
+      if(item) friends.push(item);
+    });
+
+    newLocationForm.newLocation.events.forEach((item) => {
+      if(item) events.push(item);
+    });
+
+    newLocationForm.newLocation.whodisliked = whoDisliked;
+    newLocationForm.newLocation.wholiked = whoLiked;
+    newLocationForm.newLocation.friends = friends;
+    newLocationForm.newLocation.events = events;
+
+    newLocationForm.newLocation.times = newLocationForm.times;
+
+    newLocationForm.newLocation.positives = newLocationForm.newLocation.positives.split(',');
+    newLocationForm.newLocation.negatives = newLocationForm.newLocation.negatives.split(',');
+    console.log('split positives', newLocationForm.newLocation.positives);
+    console.log('split negatives', newLocationForm.newLocation.negatives);
 
 
-    newEventForm.newEvent.positives.split(',');
-    newEventForm.newEvent.negatives.split(',');
-    console.log('split positives', newEventForm.newEvent.positives);
-    console.log('split negatives', newEventForm.newEvent.negatives);
 
-    console.log('new event', newEventForm.newEvent);
+    console.log('new location', newLocationForm.newLocation);
 
-    Location.save(newEventForm.newEvent, () => {
-      $state.go('eventIndex');
+    Location.save(newLocationForm.newLocation, () => {
+      $state.go('locationIndex');
     });
   }
 
