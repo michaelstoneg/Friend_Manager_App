@@ -13,7 +13,7 @@ const eventSchema = new mongoose.Schema({
     }
   ],
   duration: { type: Number },
-  start: { type: Number },
+  start: { type: Date },
   rating: { type: Number, min: 0, max: 5 },
   attendance: { type: Number},
   friends: [

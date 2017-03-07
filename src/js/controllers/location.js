@@ -1,7 +1,7 @@
 angular.module('FriendManagerApp')
   .controller('NewLocationFormController', NewLocationFormController)
-  .controller('LocationIndexController', LocationIndexController);
-  // .controller('LocationShowController', LocationShowController);
+  .controller('LocationIndexController', LocationIndexController)
+  .controller('LocationShowController', LocationShowController);
 
 
 LocationIndexController.$inject = ['$auth', '$state', 'Location'];
@@ -30,8 +30,8 @@ function NewLocationFormController($auth, $state, Location) {
 
   newLocationForm.newLocation = {};
   newLocationForm.times = {
-    open: undefined,
-    close: undefined
+    opening: undefined,
+    closing: undefined
   };
 
   newLocationForm.newLocation.friends = [];
