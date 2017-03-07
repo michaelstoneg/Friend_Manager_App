@@ -80,8 +80,9 @@ function NewEventFormController($auth, $state, Event) {
     newEventForm.newEvent.whodisliked = whoDisliked;
     newEventForm.newEvent.wholiked = whoLiked;
 
-    newEventForm.newEvent.positives = newEventForm.newEvent.positives.split(',');
-    newEventForm.newEvent.negatives = newEventForm.newEvent.negatives.split(',');
+
+    newEventForm.newEvent.positives.split(',');
+    newEventForm.newEvent.negatives.split(',');
     console.log('split positives', newEventForm.newEvent.positives);
     console.log('split negatives', newEventForm.newEvent.negatives);
 
