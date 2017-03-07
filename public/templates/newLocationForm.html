@@ -1,0 +1,94 @@
+<h1>New Location Deets</h1>
+
+<form novalidate ng-submit="newEventForm.submit()">
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="name..." ng-model="newLocationForm.newLocation.name">
+  </div>
+
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="area..." ng-model="newLocationForm.newLocation.area">
+  </div>
+
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="Number" placeholder="distance from home..." ng-model="newLocationForm.newLocation.distance">
+  </div>
+
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="String" placeholder="Address..." ng-model="newLocationForm.newLocation.address">
+  </div>
+
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="String" placeholder="Location type..." ng-model="newLocationForm.newLocation.type">
+  </div>
+
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="Number" min=0 max=5 placeholder="Price.." ng-model="newLocationForm.newLocation.price">
+  </div>
+
+  <div class="row">
+    <h3>Who's Been</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value="" ng-model="newLocationForm.newLocation.friends[$index]">
+        </li>
+      </ul>
+  </div>
+
+  <div class="row">
+    <h3>Events here</h3>
+    <ul>
+      <li ng-repeat="event in main.allEvents">
+        <label>
+          {{event.name}}
+          <input type="checkbox" ng-true-value="'{{event._id}}'" ng-false-value="" ng-model="newLocationForm.newLocation.events[$index]">
+        </li>
+      </ul>
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="Number" min=0 max=5 placeholder="Rating.." ng-model="newLocationForm.newLocation.rating">
+  </div>
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="Time" placeholder="Location opening time..." ng-model="newLocationForm.openTime">
+    <input class="u-full-width" type="Time" placeholder="Location closing time..." ng-model="newLocationForm.closeTime">
+  </div>
+
+  <div class="row">
+    <label class="formLabel"></label><br>
+    <input class="u-full-width" type="string" placeholder="Positives..." ng-model="newLocationForm.newLocation.positives">
+  </div>
+  <div class="row">
+    <div class="row">
+      <label class="formLabel"></label><br>
+      <input class="u-full-width" type="string" placeholder="Negatives..." ng-model="newLocationForm.newLocation.negatives">
+    </div>
+  <div class="row">
+    <h3>Who Liked</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-false-value="" ng-model="newLocationForm.newLocation.wholiked[$index]">
+        </li>
+      </ul>
+  </div>
+  <div class="row">
+    <h3>Who Disliked</h3>
+    <ul>
+      <li ng-repeat="friend in main.allFriends">
+        <label>
+          {{friend.name}}
+          <input type="checkbox" ng-true-value="'{{friend._id}}'" ng-model="newLocationForm.newLocation.whodisliked[$index]">
+        </li>
+      </ul>
+  </div>
+  <button class="buttonLog" id="newEventFormButton">Submit</button>

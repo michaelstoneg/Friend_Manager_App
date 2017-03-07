@@ -59,6 +59,21 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/event/:id',
       templateUrl: '/templates/eventShow.html',
       controller: 'EventShowController as eventShow'
+    })
+    .state('newLocationForm', {
+      url: '/newLocationForm',
+      templateUrl: '/templates/newLocationForm.html',
+      controller: 'NewLocationFormController as newLocationForm'
+    })
+    .state('locationIndex', {
+      url: '/locationIndex',
+      templateUrl: '/templates/locationIndex.html',
+      controller: 'LocationIndexController as locationIndex'
+    })
+    .state('locationShow', {
+      url: '/location/:id',
+      templateUrl: '/templates/locationShow.html',
+      controller: 'LocationShowController as locationShow'
     });
   $urlRouterProvider.otherwise('/');
 }

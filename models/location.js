@@ -1,6 +1,6 @@
 const mongoose  = require('mongoose');
 
-const eventSchema = new mongoose.Schema({
+const locationSchema = new mongoose.Schema({
   name: { type: String },
   area: { type: String },
   distance: { type: Number },

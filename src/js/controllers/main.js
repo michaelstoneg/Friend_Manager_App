@@ -22,8 +22,9 @@ function MainController($auth, $state, $rootScope, User, Friend) {
     console.log('current user', main.user);
   });
 
-  //all friends
+  //all friends & Events
   main.allFriends = Friend.query();
+  main.allEvents = Event.query();
 
   const protectedStates = [];
   function secureState(e, toState) {
