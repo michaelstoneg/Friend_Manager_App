@@ -8,8 +8,10 @@ LocationIndexController.$inject = ['$auth', '$state', 'Location'];
 function LocationIndexController($auth, $state, Location) {
   const locationIndex = this;
 
-  locationIndex.all = Location.query();
-  console.log('all locations', locationIndex.all);
+  locationIndex.all = Location.query((allLocations) => {
+    console.log(allLocations);
+    console.log('all Locations', locationIndex.all);
+  });
 }
 
 LocationShowController.$inject = ['$auth', 'User', '$state', 'Location'];
@@ -69,8 +71,13 @@ function NewLocationFormController($auth, $state, Location) {
 
     newLocationForm.newLocation.times = newLocationForm.times;
 
-    newLocationForm.newLocation.positives = newLocationForm.newLocation.positives.split(',');
-    newLocationForm.newLocation.negatives = newLocationForm.newLocation.negatives.split(',');
+    if(newLocationForm.newLocation.positives) {
+      newLocationForm.newLocation.positives = newLocationForm.newLocation.positives.split(',');
+    }
+    if(newLocationForm.newLocation.negatives) {
+      newLocationForm.newLocation.negatives = newLocationForm.newLocation.negatives.split(',');
+    }
+
     console.log('split positives', newLocationForm.newLocation.positives);
     console.log('split negatives', newLocationForm.newLocation.negatives);
 

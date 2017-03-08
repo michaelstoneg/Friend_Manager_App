@@ -8,8 +8,21 @@ FriendIndexController.$inject = ['$auth', 'User', '$state', 'Friend'];
 function FriendIndexController($auth, User, $state, Friend) {
   const friendIndex = this;
 
-  friendIndex.all = Friend.query();
-  console.log('all friends', friendIndex.all);
+  friendIndex.all = Friend.query((allFriends) => {
+    console.log(allFriends);
+    console.log('all friends', friendIndex.all);
+  });
+
+  // function deleteFriend(friendId) {
+  //   console.log(friendId);
+  //   console.log('friend go bye bye!');
+  //   Friend.remove(friendId, () => {
+  //     $state.reload('friendIndex');
+  //   });
+  // }
+  //
+  // friendIndex.deleteFriend = deleteFriend;
+
 }
 
 FriendShowController.$inject = ['$auth', 'User', '$state', 'Friend'];
@@ -20,6 +33,16 @@ function FriendShowController($auth, User, $state, Friend) {
     friendShow.friend = friend;
     console.log('this friend', friendShow.friend);
   });
+
+  function deleteFriend() {
+    console.log(friendShow.friend._id);
+    console.log('friend go bye bye!');
+    Friend.remove({ id: friendShow.friend._id }, () => {
+      $state.go('friendIndex');
+    });
+  }
+
+  friendShow.deleteFriend = deleteFriend;
 
 }
 
@@ -78,8 +101,12 @@ function NewFriendFormController($auth, $state, Friend) {
     newFriendForm.newFriend.interests.push(newFriendForm.interests, newFriendForm.interests1, newFriendForm.interests2);
     newFriendForm.newFriend.contact = newFriendForm.contact;
 
-    newFriendForm.newFriend.likes = newFriendForm.newFriend.likes.split(',');
-    newFriendForm.newFriend.dislikes = newFriendForm.newFriend.dislikes.split(',');
+    if(newFriendForm.newFriend.likes) {
+      newFriendForm.newFriend.likes = newFriendForm.newFriend.likes.split(',');
+    }
+    if (newFriendForm.newFriend.dislikes) {
+      newFriendForm.newFriend.dislikes = newFriendForm.newFriend.dislikes.split(',');
+    }
     console.log('split likes', newFriendForm.newFriend.likes);
     console.log('split dislikes', newFriendForm.newFriend.dislikes);
 

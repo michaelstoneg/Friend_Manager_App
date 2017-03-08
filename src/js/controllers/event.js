@@ -8,8 +8,10 @@ EventIndexController.$inject = ['$auth', '$state', 'Event'];
 function EventIndexController($auth, $state, Event) {
   const eventIndex = this;
 
-  eventIndex.all = Event.query();
-  console.log('all events', eventIndex.all);
+  eventIndex.all = Event.query((allEvents) => {
+    console.log(allEvents);
+    console.log('all events', eventIndex.all);
+  });
 }
 
 EventShowController.$inject = ['$auth', 'User', '$state', 'Event'];
@@ -80,8 +82,13 @@ function NewEventFormController($auth, $state, Event) {
     newEventForm.newEvent.whodisliked = whoDisliked;
     newEventForm.newEvent.wholiked = whoLiked;
 
-    newEventForm.newEvent.positives = newEventForm.newEvent.positives.split(',');
-    newEventForm.newEvent.negatives = newEventForm.newEvent.negatives.split(',');
+    if(newEventForm.newEvent.positives) {
+      newEventForm.newEvent.positives = newEventForm.newEvent.positives.split(',');
+    }
+    if(newEventForm.newEvent.negatives) {
+      newEventForm.newEvent.negatives = newEventForm.newEvent.negatives.split(',');
+    }
+
     console.log('split positives', newEventForm.newEvent.positives);
     console.log('split negatives', newEventForm.newEvent.negatives);
 
