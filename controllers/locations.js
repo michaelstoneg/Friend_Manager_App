@@ -38,14 +38,10 @@ function locationsUpdate(req, res) {
 }
 
 function locationsDelete(req, res) {
-  Location.findById(req.params.id, (err, location) => {
-    if(err) return res.status(500).json({ error: err });
-    if(!location) return res.status(404).json({ error: 'Not found' });
-
-    Location.remove(err => {
-      if(err) return res.status(500).json({ error: err });
-      res.status(204).send();
-    });
+  Location.findByIdAndRemove(req.params.id, (err, story) => {
+    if (err) return res.status(500).json({error: err});
+    if (!story) return res.status(404).json({ error: 'NOT FOUND!' });
+    return res.status(204).send();
   });
 }
 

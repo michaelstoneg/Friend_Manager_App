@@ -22,6 +22,8 @@ function MainController($auth, $state, $rootScope, User, Friend, Event) {
     console.log('current user', main.user);
   });
 
+  console.log('logged in?', main.isLoggedIn);
+
   //all friends & Events
   main.allFriends = Friend.query();
   main.allEvents = Event.query();

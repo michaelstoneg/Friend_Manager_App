@@ -1,9 +1,7 @@
 angular.module('FriendManagerApp')
   .controller('UserFormController', UserFormController)
   .controller('UserShowController', UserShowController);
-  // .controller('UserDataController', UserDataController);
-
-
+  
 
 UserFormController.$inject = ['$auth', 'User', '$state'];
 function UserFormController($auth, User, $state) {

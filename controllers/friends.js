@@ -38,16 +38,13 @@ function friendsUpdate(req, res) {
 }
 
 function friendsDelete(req, res) {
-  Friend.findById(req.params.id, (err, friend) => {
-    if(err) return res.status(500).json({ error: err });
-    if(!friend) return res.status(404).json({ error: 'Not found' });
-
-    Friend.remove(err => {
-      if(err) return res.status(500).json({ error: err });
-      res.status(204).send();
-    });
+  Friend.findByIdAndRemove(req.params.id, (err, story) => {
+    if (err) return res.status(500).json({error: err});
+    if (!story) return res.status(404).json({ error: 'NOT FOUND!' });
+    return res.status(204).send();
   });
 }
+
 
 module.exports = {
   index: friendsIndex,

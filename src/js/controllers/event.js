@@ -23,6 +23,15 @@ function EventShowController($auth, User, $state, Event) {
     console.log('this event', eventShow.event);
   });
 
+  function deleteEvent() {
+    console.log(eventShow.event._id);
+    console.log('event go bye bye!');
+    Event.remove({ id: eventShow.event._id }, () => {
+      $state.go('eventIndex');
+    });
+  }
+
+  eventShow.deleteEvent = deleteEvent;
 }
 
 
