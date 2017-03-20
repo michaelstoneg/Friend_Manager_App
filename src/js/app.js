@@ -45,6 +45,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/friendShow.html',
       controller: 'FriendShowController as friendShow'
     })
+    .state('friendEdit', {
+      url: '/friend/:id/edit',
+      templateUrl: '/templates/friendEdit.html',
+      controller: 'FriendShowController as friendShow'
+    })
     .state('newEventForm', {
       url: '/newEventForm',
       templateUrl: '/templates/newEventForm.html',

@@ -12,17 +12,6 @@ function FriendIndexController($auth, User, $state, Friend) {
     console.log(allFriends);
     console.log('all friends', friendIndex.all);
   });
-
-  // function deleteFriend(friendId) {
-  //   console.log(friendId);
-  //   console.log('friend go bye bye!');
-  //   Friend.remove(friendId, () => {
-  //     $state.reload('friendIndex');
-  //   });
-  // }
-  //
-  // friendIndex.deleteFriend = deleteFriend;
-
 }
 
 FriendShowController.$inject = ['$auth', 'User', '$state', 'Friend'];
@@ -42,7 +31,15 @@ function FriendShowController($auth, User, $state, Friend) {
     });
   }
 
+  // function updateFriend() {
+  //   Display.update({id: displayEdit.display.id}, displayEdit.display, () => {
+  //     $state.go('displayShow', $state.params);
+  //   });
+  // }
+
+
   friendShow.deleteFriend = deleteFriend;
+  // friendShow.updateFriend = updateFriend;
 
 }
 

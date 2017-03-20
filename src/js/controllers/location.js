@@ -23,6 +23,15 @@ function LocationShowController($auth, User, $state, Location) {
     console.log('this location', locationShow.location);
   });
 
+  function deleteLocation() {
+    console.log(locationShow.location._id);
+    console.log('location go bye bye!');
+    Location.remove({ id: locationShow.location._id }, () => {
+      $state.go('friendIndex');
+    });
+  }
+
+  locationShow.deleteLocation = deleteLocation;
 }
 
 

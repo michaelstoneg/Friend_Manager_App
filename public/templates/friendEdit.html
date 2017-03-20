@@ -1,9 +1,9 @@
-<h1>Friend Details</h1>
-
+<h1>Switch it up</h1>
+{{friendShow.friend}}
 <ul>
-  <li>Name: {{friendShow.friend.name}}</li>
+  <li>Name: <input type="button" name="name" value="" placeholder={{friendShow.friend.name}}></li>
   <li>ID: {{friendShow.friend._id}}</li>
-  <li>contact: {{friendShow.friend.contact}}</li>
+  <!-- <li>contact: {{friendShow.friend.contact}}</li>
   <li>Dob: {{friendShow.friend.dob}}</li>
   <li>Gender: {{friendShow.friend.gender}}</li>
   <li>Orientation: {{friendShow.friend.orientation}}</li>
@@ -25,6 +25,6 @@
     <li>Name: {{interest.name}}</li>
     <li>Type: {{interest.type}}</li>
   </ul>
-  <button ui-sref="friendEdit({id: friendShow.friend._id})">Edit</button>
   <button ng-click="friendShow.deleteFriend()">Delete</button>
+  <button ng-click="friendShow.updateFriend(friend._id)">Update</button> -->
 </ul>
